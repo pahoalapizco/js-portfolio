@@ -1,12 +1,23 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'build'),
-    fildna
+    path: path.resolve(__dirname, "build"),
+    filename: 'main.js',
   },
   resolve: {
-    extensions: ['.js'],
-  }
-}
+    extensions: [".js"],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+    ],
+  },
+};
