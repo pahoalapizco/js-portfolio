@@ -20,6 +20,11 @@ const ruleForCss = {
   ],
 };
 
+const rulesForImages = {
+  test: /\.png/,
+  type: "asset/resource",
+};
+
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -33,6 +38,7 @@ module.exports = {
     rules: [
       ruleForJavaScript,
       ruleForCss,
+      rulesForImages,
     ],
   },
   plugins: [
