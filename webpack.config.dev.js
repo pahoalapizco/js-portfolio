@@ -35,6 +35,7 @@ const rulesForFonts = {
 module.exports = {
   entry: "./src/index.js",
   mode: "development",
+  // watch: true,
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "[name].[contenthash].js",
