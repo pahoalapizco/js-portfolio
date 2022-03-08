@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TercerPlugin = require("terser-webpack-plugin");
 const DotEnd = require("dotenv-webpack");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const ruleForJavaScript = {
   test: /\.m?js$/,
@@ -35,6 +34,7 @@ const rulesForFonts = {
 
 module.exports = {
   entry: "./src/index.js",
+  mode: "development",
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "[name].[contenthash].js",
@@ -70,13 +70,5 @@ module.exports = {
       ],
     }),
     new DotEnd(),
-    new CleanWebpackPlugin(),
   ],
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new CssMinimizerPlugin(),
-      new TercerPlugin(),
-    ]
-  },
 };
