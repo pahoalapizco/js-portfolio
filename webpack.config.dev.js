@@ -72,4 +72,13 @@ module.exports = {
     }),
     new DotEnd(),
   ],
+  devServer: {    
+    static: {
+      directory: path.join(__dirname, "build"),
+    },
+    compress: true,
+    historyApiFallback: true,
+    port: 3008,
+    open: true,
+  }
 };

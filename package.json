@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --config=webpack.config.dev.js",
     "start:dev": "webpack --watch --config=webpack.config.dev.js",
     "build:dev": "webpack --config=webpack.config.dev.js",
     "build:prod": "node ./scripts/create-env.js && webpack --mode=production --config=webpack.config.js"
@@ -42,7 +43,8 @@
     "terser-webpack-plugin": "^5.3.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {}
 }
