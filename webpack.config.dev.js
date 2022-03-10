@@ -2,9 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const TercerPlugin = require("terser-webpack-plugin");
 const DotEnd = require("dotenv-webpack");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 const ruleForJavaScript = {
   test: /\.m?js$/,
@@ -71,6 +70,7 @@ module.exports = {
       ],
     }),
     new DotEnd(),
+    new BundleAnalyzerPlugin(),
   ],
   devServer: {    
     static: {
