@@ -34,6 +34,7 @@ const rulesForFonts = {
 module.exports = {
   entry: "./src/index.js",
   mode: "development",
+  devtool: "source-map",
   // watch: true,
   output: {
     path: path.resolve(__dirname, "build"),
